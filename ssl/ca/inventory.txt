@@ -1,2 +1,0 @@
-0x0001 2016-07-05T22:31:59UTC 2021-07-05T22:31:59UTC /CN=Puppet CA: ip-10-0-1-25.us-west-2.compute.internal
-0x0002 2016-07-05T22:32:00UTC 2021-07-05T22:32:00UTC /CN=ip-10-0-1-25.us-west-2.compute.internal
