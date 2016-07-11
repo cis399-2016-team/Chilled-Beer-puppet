@@ -29,8 +29,8 @@ class sshd {
 		hasrestart => true,
 		# package and configuration must be present for service
 		require    => [ Package["sshd"],
-			        File["/etc/smartd.conf"] ],
+			        File["/etc//ssh/manifest/ssh/ssh_config.conf"] ],
 		# changes to configuration cause service restart
-		subscribe  => File["/etc/smartd.conf"],
+		subscribe  => File["/etc/ssh/manifest/ssh/ssh_config.conf"],
 	}
 }
