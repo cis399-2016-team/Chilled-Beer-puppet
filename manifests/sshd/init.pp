@@ -1,24 +1,23 @@
 class sshd {
 	package {
-		"sshd": ensure => installed;
+		"openssh-server": ensure => installed;
 	}
 
-	file { "/etc/sshd.conf":
+	file { "/etc/ssh/manifest/sshd/sshd_config.conf":
 		source  => [
 			# from modules/smartd/files/$hostname/smartd.conf
 			"puppet:///modules/sshd/sshd.conf",
 		],
+        
 		mode    => 444,
-
 		owner   => root,
-
 		group   => root,
 
 		# package must be installed before configuration file
-		require => Package["sshd"],
+		require => Package["openssh-server"],
 	}
 
-	service { "sshd":
+	service { "ssh":
 		# automatically start at boot time
 		enable     => true,
 		# restart service if it is not running
