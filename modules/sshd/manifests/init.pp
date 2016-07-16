@@ -3,7 +3,7 @@ class sshd {
 		"openssh-server": ensure => installed;
 	}
 
-	file { "/etc/ssh/manifest/sshd/sshd_config_conf":
+	file { "/etc/ssh/sshd_config":
 		source  => [
 			# from modules/smartd/files/$hostname/smartd.conf
 			"puppet:///modules/sshd/files/sshd_conf",
@@ -27,10 +27,10 @@ class sshd {
 		# "service smartd restart" can restart service
 		hasrestart => true,
 		# package and configuration must be present for service
-		require    => [ Package["sshd"],
-			        File["/etc/ssh/manifest/ssh/ssh_config"] ],
+		require    => [ Package["openssh-server"],
+			        File["/etc/ssh/ssh_config"] ],
 		# changes to configuration cause service restart
-		subscribe  => File["/etc/ssh/manifest/ssh/ssh_config"],
+		subscribe  => File["/etc/ssh/ssh_config"],
 	}
 
 	ssh_authorized_key { "chenders-key-pair-oregon":
