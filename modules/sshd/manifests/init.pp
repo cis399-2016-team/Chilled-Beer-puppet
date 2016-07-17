@@ -6,7 +6,7 @@ class sshd {
 	file { "/etc/ssh/sshd_config":
 		source  => [
 			# from modules/smartd/files/$hostname/smartd.conf
-			"puppet:///modules/sshd/files/sshd_conf",
+			"puppet:///modules/sshd/sshd_config",
 		],
         
 		mode    => 444,
