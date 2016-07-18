@@ -28,9 +28,9 @@ class sshd {
 		hasrestart => true,
 		# package and configuration must be present for service
 		require    => [ Package["openssh-server"],
-			        File["/etc/ssh/ssh_config"] ],
+			        File["/etc/ssh/sshd_config"] ],
 		# changes to configuration cause service restart
-		subscribe  => File["/etc/ssh/ssh_config"],
+		subscribe  => File["/etc/ssh/sshd_config"],
 	}
 
 	ssh_authorized_key { "chenders-key-pair-oregon":
