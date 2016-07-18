@@ -18,12 +18,9 @@ file {"/etc/apache2/apache2.conf":
 	}
 
 service { "apache2":
-  enable => true;
-
+  enable => true,
   ensure => running,
-
   hasstatus => true,
-
   hasrestart => true,
 
   require => [ Package["apache"], 

@@ -8,9 +8,11 @@ node ip-10-0-1-25 {
     }
 
     node ip-10-0-1-24 {
-    }
+	include sshd   
+	 }
 
     node ip-10-0-3-199{
+	include sshd
 	}
 
     #node ip-10-0-1-125 {
