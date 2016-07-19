@@ -11,9 +11,9 @@ node ip-10-0-1-25 {
 	include sshd   
 	 }
 
-    #node ip-10-0-3-101 {
-	#include sshd
-	#}
+    node ip-10-0-3-101 {
+	include sshd
+	}
 
     #node ip-10-0-3-199{
 	#include sshd
