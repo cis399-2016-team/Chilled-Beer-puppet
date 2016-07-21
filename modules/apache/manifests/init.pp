@@ -19,7 +19,7 @@ file {"/etc/apache2/apache2.conf":
   require => Package["apache2"],
 	}
 
-file {"/var/www/html/":
+file {"/var/www/html":
   source => [
     "puppet:///module/apache/html"
   ],
