@@ -41,7 +41,6 @@ service { "apache":
   require => [ Package["apache"], 
               File["/etc/apache2/apache2.conf"] ],
 
-  subscribe => File["/etc/apache2/apache2.conf"
+  subscribe => File["/etc/apache2/apache2.conf"],
   }
-
 }
