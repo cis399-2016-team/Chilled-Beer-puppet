@@ -22,7 +22,7 @@ file {"/etc/apache2/apache2.conf":
 file {"/var/www/html/":
   source => [
     "puppet:///module/apache/html"
-  ]
+  ],
 
   recurse => directory,
   ensure => directory,
