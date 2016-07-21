@@ -1,5 +1,6 @@
 #class { 'apache': }
-# I used "https://github.com/puppetlabs/puppetlabs-apache/blob/master/manifests/init.pp" as a reference for creating the file
+
+
 
 class apache {
     package {
@@ -11,6 +12,7 @@ file {"/etc/apache2/apache2.conf":
     "puppet:///modules/apache2/apache2.conf",
   ],
 
+  mode => 444,
   owner => root,
   group => root,
 
@@ -19,11 +21,14 @@ file {"/etc/apache2/apache2.conf":
 
 file {"/var/www/html/index.html":
   source => [
-    "puppet:///module/apache/file/index.html"
+    "puppet:///module/apache/index.html"
   ]
 
+  ensure => directory,
+  recurse => directory,
+  mode => 755,
   owner => root,
-  group,
+  group => root,
 
   require => Package["apache"],
 }
