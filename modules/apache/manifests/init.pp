@@ -4,7 +4,7 @@
 
 class apache {
     package {
-      "apache": ensure => installed;
+      "apache2": ensure => installed;
     }
 
 file {"/etc/apache2/apache2.conf":
@@ -16,7 +16,7 @@ file {"/etc/apache2/apache2.conf":
   owner => root,
   group => root,
 
-  require => Package["apache"],
+  require => Package["apache2"],
 	}
 
 file {"/var/www/html/":
@@ -32,13 +32,13 @@ file {"/var/www/html/":
   #require => Package["apache"],
 }
 
-service { "apache":
+service { "apache2":
   enable => true,
   ensure => running,
   hasstatus => true,
   hasrestart => true,
 
-  require => [ Package["apache"], 
+  require => [ Package["apache2"], 
               File["/etc/apache2/apache2.conf"] ],
 
   subscribe => File["/etc/apache2/apache2.conf"]
