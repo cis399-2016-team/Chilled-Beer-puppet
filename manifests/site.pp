@@ -8,13 +8,13 @@ node ip-10-0-1-25 {
     }
 
     node ip-10-0-1-24 {
-	include sshd,
-	include apache,   
+	include sshd
+	include apache   
 	 }
 
     node ip-10-0-3-101 {
-	include sshd,
-	include apache,
+	include sshd
+	include apache
 	}
 
     #node ip-10-0-3-199{
