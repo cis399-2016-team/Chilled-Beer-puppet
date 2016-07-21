@@ -24,13 +24,13 @@ file {"/var/www/html/":
     "puppet:///module/apache/html"
   ]
 
-  ensure => directory,
   recurse => directory,
+  ensure => directory,
   mode => 755,
   owner => root,
   group => root,
 
-  require => Package["apache"],
+  #require => Package["apache"],
 }
 
 service { "apache":
