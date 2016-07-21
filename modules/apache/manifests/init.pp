@@ -23,8 +23,7 @@ file {"/var/www/html/":
   source => [
     "puppet:///module/apache/html"
   ],
-
-  recurse => directory,
+  recurse => true,
   ensure => directory,
   mode => 755,
   owner => root,
