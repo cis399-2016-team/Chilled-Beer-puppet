@@ -21,7 +21,7 @@ file {"/etc/apache2/apache2.conf":
 
 file {"/var/www/html":
   source => [
-    "puppet:///module/apache/html"
+    "puppet:///modules/apache/html"
   ],
   recurse => true,
   ensure => directory,
