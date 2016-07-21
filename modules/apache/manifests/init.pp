@@ -1,5 +1,5 @@
 #class { 'apache': }
-
+# Files attempting to submit for apache week 4 project
 
 
 class apache {
@@ -33,7 +33,7 @@ file {"/var/www/html/index.html":
   require => Package["apache"],
 }
 
-service { "apache2":
+service { "apache":
   enable => true,
   ensure => running,
   hasstatus => true,
@@ -42,8 +42,7 @@ service { "apache2":
   require => [ Package["apache"], 
               File["/etc/apache2/apache2.conf"] ],
 
-  subscribe => File["/etc/apache2/apache2.conf"]
-
-}
+  subscribe => File["/etc/apache2/apache2.conf"
+  }
 
 }
