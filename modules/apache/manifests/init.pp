@@ -19,9 +19,9 @@ file {"/etc/apache2/apache2.conf":
   require => Package["apache"],
 	}
 
-file {"/var/www/html/index.html":
+file {"/var/www/html/":
   source => [
-    "puppet:///module/apache/index.html"
+    "puppet:///module/apache/html"
   ]
 
   ensure => directory,
