@@ -17,6 +17,17 @@ file {"/etc/apache2/apache2.conf":
   require => Package["apache"],
 	}
 
+file {"/var/www/html/index.html":
+  source => [
+    "puppet:///module/apache/file/index.html"
+  ]
+
+  owner => root,
+  group,
+
+  require => Package["apache"],
+}
+
 service { "apache2":
   enable => true,
   ensure => running,
