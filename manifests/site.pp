@@ -17,7 +17,8 @@ node ip-10-0-1-25 {
 	include sshd
 	include apache
 	include useraccounts
-	}
+	include wordpress	
+}
 
     #node ip-10-0-3-199{
 	#include sshd
