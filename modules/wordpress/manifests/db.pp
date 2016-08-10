@@ -17,7 +17,7 @@ class wordpress::db {
         users => {
             "${wordpress::conf::db_user_host}" => {
                 ensure => present,
-                password_hash => mysql_password("${wordpress::conf::UOregon2016}")
+                password_hash => mysql_password("UOregon2016")
             }
         },
 
